@@ -34,3 +34,10 @@ pull: ## Pull a docker image
 push: ## Push a docker image
 	@echo "${GREEN}Pushing a docker image (${IMAGE}:${TAG})${RESET}"
 	@docker push ${IMAGE}:${TAG}
+
+.PHONY: all
+all: ## All
+	@make image && make push
+	@make TAG=v8.0.0000 image && make TAG=v8.0.0000 push
+	@make TAG=v8.0.0027 image && make TAG=v8.0.0027 push
+	@make TAG=v8.0.1383 image && make TAG=v8.0.1383 push
