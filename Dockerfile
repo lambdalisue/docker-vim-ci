@@ -1,4 +1,4 @@
-ARG BRANCH=${BRANCH:-HEAD}
+ARG BRANCH=${BRANCH:-master}
 FROM alpine:latest
 MAINTAINER lambdalisue <lambdalisue@hashnote.net>
 
