@@ -40,4 +40,5 @@ all: ## All
 	@make image && make push
 	@make TAG=v8.0.0000 image && make TAG=v8.0.0000 push
 	@make TAG=v8.0.0027 image && make TAG=v8.0.0027 push
+	@make TAG=v8.0.0105 image && make TAG=v8.0.0105 push
 	@make TAG=v8.0.1383 image && make TAG=v8.0.1383 push
