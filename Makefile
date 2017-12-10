@@ -6,9 +6,9 @@ IMAGE := lambdalisue/vim-ci
 TAG   := latest
 
 ifeq (${TAG},latest)
-    BRANCH := master
+    OPTIONS :=
 else
-    BRANCH := ${TAG}
+    OPTIONS := --branch ${TAG}
 endif
 
 # http://postd.cc/auto-documented-makefile/
@@ -22,7 +22,7 @@ help: ## Show this help
 
 image: ## Build a docker image
 	@echo "${GREEN}Building a docker image (${IMAGE}:${TAG}) of Vim ${BRANCH}${RESET}"
-	@docker build --build-arg BRANCH=${BRANCH} -t ${IMAGE}:${TAG} .
+	@docker build --build-arg OPTIONS="${OPTIONS}" -t ${IMAGE}:${TAG} .
 
 .PHONY: pull
 pull: ## Pull a docker image
