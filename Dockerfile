@@ -11,6 +11,7 @@ RUN apk add --no-cache --virtual build-deps curl git make g++ ncurses-dev \
  && apk add --no-cache ncurses diffutils \
  && git clone --depth 1 --single-branch $OPTIONS https://github.com/vim/vim \
  && cd vim \
+ && git log -1 \
  && ./configure --enable-fail-if-missing --with-features=huge \
  && make \
  && make install \
